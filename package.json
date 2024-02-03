@@ -10,10 +10,12 @@
     "lint": "eslint src --ext .jsx,.js,.tsx,.ts  --no-error-on-unmatched-pattern --fix && stylelint --fix src/{,*/}*.{scss,css} --allow-empty-input",
     "preview": "vite preview",
     "sb": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test:unit": "vitest --root src/"
   },
   "dependencies": {
     "@fontsource/roboto": "^5.0.8",
+    "@testing-library/jest-dom": "^6.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
@@ -29,6 +31,7 @@
     "@storybook/react": "^7.6.12",
     "@storybook/react-vite": "^7.6.12",
     "@storybook/test": "^7.6.12",
+    "@testing-library/react": "^14.2.1",
     "@types/node": "^20.11.16",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
@@ -39,10 +42,12 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "eslint-plugin-storybook": "^0.6.15",
+    "jsdom": "^24.0.0",
     "sass": "^1.70.0",
     "storybook": "^7.6.12",
     "stylelint": "^16.2.1",
     "typescript": "^5.2.2",
-    "vite": "^5.0.8"
+    "vite": "^5.0.8",
+    "vitest": "^1.2.2"
   }
 }
