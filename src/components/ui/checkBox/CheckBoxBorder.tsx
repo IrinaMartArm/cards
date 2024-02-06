@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react'
 
-import { Check } from '@/images/icons/svgs/Check'
+import { CheckBorder } from '@/images/icons/svgs/CheckBorder'
 import * as CheckboxRadix from '@radix-ui/react-checkbox'
 import * as LabelRadix from '@radix-ui/react-label'
 import { clsx } from 'clsx'
@@ -19,7 +19,7 @@ export type CheckboxProps = {
   tight?: boolean
 }
 
-export const CheckBox: FC<CheckboxProps> = ({
+export const CheckBoxBorder: FC<CheckboxProps> = ({
   checked,
   className,
   disabled,
@@ -74,7 +74,7 @@ export const CheckBox: FC<CheckboxProps> = ({
                         },
                       }}
                     >
-                      <Check color={'var(--color-light-100)'} size={18} />
+                      <CheckBorder color={'var(--color-light-900)'} size={18} />
                     </motion.div>
                   </motion.div>
                 </CheckboxRadix.Indicator>

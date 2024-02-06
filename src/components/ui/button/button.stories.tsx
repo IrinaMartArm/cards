@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
+import out from '../../../images/svg/log-out.svg'
 import { Button } from './'
 
 const meta = {
@@ -25,6 +26,14 @@ export const Primary: Story = {
   },
 }
 
+export const DisabledPrimary: Story = {
+  args: {
+    children: 'Disabled Button',
+    disabled: true,
+    variant: 'primary',
+  },
+}
+
 export const Secondary: Story = {
   args: {
     children: 'Secondary Button',
@@ -32,16 +41,18 @@ export const Secondary: Story = {
     variant: 'secondary',
   },
 }
-export const Tertiary: Story = {
+
+export const DisabledSecondary: Story = {
   args: {
-    children: 'Tertiary Button',
-    disabled: false,
-    variant: 'tertiary',
+    children: 'Disabled Button',
+    disabled: true,
+    variant: 'secondary',
   },
 }
 export const Link: Story = {
   args: {
-    children: 'Tertiary Button',
+    as: 'a',
+    children: 'AsLink',
     disabled: false,
     variant: 'link',
   },
@@ -59,7 +70,12 @@ export const FullWidth: Story = {
 export const AsLink: Story = {
   args: {
     as: 'a',
-    children: 'Link that looks like a button',
+    children: (
+      <>
+        <img alt={''} src={out} />
+        AsLink
+      </>
+    ),
     variant: 'primary',
   },
 }

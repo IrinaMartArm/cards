@@ -1,14 +1,21 @@
-import { ComponentPropsWithoutRef, ElementType } from 'react'
+import { ComponentPropsWithoutRef } from 'react'
+
+import { Search } from '@/images/icons/svgs/Search'
 
 import s from './input.module.scss'
 
-export type InputProps<T extends ElementType> = {
+export type InputProps = {
   type: 'password' | 'search' | 'text'
-} & ComponentPropsWithoutRef<T>
-export const Input = <T extends ElementType = 'input'>(
-  props: InputProps<T> & Omit<ComponentPropsWithoutRef<T>, keyof InputProps<T>>
-) => {
+} & ComponentPropsWithoutRef<'input'>
+export const Input = (props: InputProps) => {
   const { className, type, ...rest } = props
 
-  return <input className={`${s.input} ${className}`} type={type} {...rest} />
+  const passwordStyles = type === 'password' ? s.password : ''
+
+  return (
+    <>
+      <input className={`${s.input} ${passwordStyles} ${className}`} type={type} {...rest} />
+      {type === 'password' ? <Search /> : null}
+    </>
+  )
 }
