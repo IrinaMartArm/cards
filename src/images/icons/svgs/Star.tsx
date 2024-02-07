@@ -24,7 +24,7 @@ export const Star = (allProps: IconProps) => {
           </g>
           <defs>
             <clipPath id={'prefix__clip0_124_21527'}>
-              <path d={'M0 0h24v24H0z'} fill={'#fff'} />
+              <path d={'M0 0h24v24H0z'} fill={'currentColor'} />
             </clipPath>
           </defs>
         </svg>

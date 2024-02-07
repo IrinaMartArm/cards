@@ -8,9 +8,9 @@ export const CheckBorder = (allProps: IconProps) => {
       icon={
         <svg
           fill={'none'}
-          height={'18'}
+          height={'100%'}
           viewBox={'0 0 24 24'}
-          width={'18'}
+          width={'100%'}
           xmlns={'http://www.w3.org/2000/svg'}
         >
           <path

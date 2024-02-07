@@ -4,7 +4,7 @@ import { Check } from '@/images/icons/svgs/Check'
 import * as CheckboxRadix from '@radix-ui/react-checkbox'
 import * as LabelRadix from '@radix-ui/react-label'
 import { clsx } from 'clsx'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence } from 'framer-motion'
 
 import s from './checkBox.module.scss'
 
@@ -12,29 +12,17 @@ export type CheckboxProps = {
   checked: boolean
   className?: string
   disabled?: boolean
-  id?: string
   label?: ReactNode
   onChange: (checked: boolean) => void
-  required?: boolean
-  tight?: boolean
 }
 
-export const CheckBox: FC<CheckboxProps> = ({
-  checked,
-  className,
-  disabled,
-  id,
-  label,
-  onChange,
-  required,
-  tight = false,
-}) => {
+export const CheckBox: FC<CheckboxProps> = ({ checked, className, disabled, label, onChange }) => {
   const classNames = {
-    buttonWrapper: clsx(s.buttonWrapper, disabled && s.disabled, tight && s.tight),
+    arrowColor: clsx(disabled ? 'var(--color-light-700)' : ''),
+    buttonWrapper: clsx(s.buttonWrapper, disabled && s.disabled),
+    checkColor: clsx(disabled ? 'var(--color-dark-100)' : 'var(--color-light-900)'),
     container: clsx(s.container, className),
-    indicator: s.indicator,
-    label: clsx(s.label, disabled && s.disabled, tight && s.tight),
-    root: s.root,
+    label: clsx(s.label, disabled && s.disabled),
   }
 
   return (
@@ -43,40 +31,18 @@ export const CheckBox: FC<CheckboxProps> = ({
         <div className={classNames.buttonWrapper}>
           <CheckboxRadix.Root
             checked={checked}
-            className={classNames.root}
+            className={s.root}
             disabled={disabled}
-            id={id}
             onCheckedChange={onChange}
-            required={required}
           >
             <AnimatePresence initial={false}>
               {checked && (
-                <CheckboxRadix.Indicator asChild className={classNames.indicator} forceMount>
-                  <motion.div
-                    animate={'checked'}
-                    exit={'unchecked'}
-                    initial={'unchecked'}
-                    variants={{
-                      checked: { scale: 1 },
-                      unchecked: { scale: 0.5 },
-                    }}
-                  >
-                    <motion.div
-                      variants={{
-                        checked: {
-                          opacity: 1,
-                          strokeDashoffset: 0,
-                          transition: { duration: 0.1 },
-                        },
-                        unchecked: {
-                          opacity: 0,
-                          transition: { duration: 0.1 },
-                        },
-                      }}
-                    >
-                      <Check color={'var(--color-light-100)'} size={18} />
-                    </motion.div>
-                  </motion.div>
+                <CheckboxRadix.Indicator asChild className={s.indicator} forceMount>
+                  <Check
+                    arrowColor={classNames.arrowColor}
+                    color={classNames.checkColor}
+                    size={20}
+                  />
                 </CheckboxRadix.Indicator>
               )}
             </AnimatePresence>
