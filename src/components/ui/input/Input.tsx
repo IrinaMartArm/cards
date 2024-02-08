@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef, KeyboardEvent, ReactNode } from 'react'
 
 import { Label } from '@/components/ui/label/Label'
-import { Typography } from '@/components/ui/tipography/Tipography'
+import { Typography } from '@/components/ui/tipography/_Typography'
 import { Close } from '@/images/icons/svgs/Close'
 import { Search } from '@/images/icons/svgs/Search'
 import { Visibility } from '@/images/icons/svgs/Visibility'
@@ -11,8 +11,7 @@ import s from './input.module.scss'
 
 export type InputProps = {
   errorMessage?: string
-  iconEnd?: ReactNode
-  iconStart?: ReactNode
+  isShowButton?: boolean
   label?: ReactNode
   onClearClick?: () => void
   onEnter?: (e: KeyboardEvent<HTMLInputElement>) => void
@@ -23,8 +22,7 @@ export const Input = (props: InputProps) => {
     className,
     disabled,
     errorMessage,
-    iconEnd,
-    iconStart,
+    isShowButton = false,
     label,
     onClearClick,
     onEnter,
@@ -39,11 +37,11 @@ export const Input = (props: InputProps) => {
     // iconStartColor: clsx(active ? ),
     input: clsx(s.input, showError && s.error, disabled && s.disabled),
     inputWithStart: clsx(s.inputWithStart, showError && s.error, disabled && s.disabled),
-    label: clsx(disabled ? s.label2 : s.label),
+    label: clsx(disabled ? s.labelDisable : s.label),
     root: clsx(s.box, disabled && s.disabled, className),
   }
 
-  const isShowButton = true
+  // const isShowButton = true
   const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
     if (onEnter && e.key === 'Enter') {
       onEnter(e)
@@ -51,19 +49,24 @@ export const Input = (props: InputProps) => {
     onKeyDown?.(e)
   }
 
-  if (type === 'search') {
+  {
     return (
       <div className={s.box}>
+        <span className={classNames.label}>
+          <Label label={label} />
+        </span>
         <div className={s.input_wrapper}>
-          <span className={s.iconStart}>
-            <Search color={'var(--color-dark-100)'} />
-          </span>
-          <input
-            className={classNames.inputWithStart}
-            onKeyDown={handleKeyDown}
-            type={type}
-            {...rest}
-          />
+          {type === 'search' && (
+            <span className={s.iconStart}>
+              <Search color={'var(--color-dark-100)'} size={20} />
+            </span>
+          )}
+          <input className={classNames.input} onKeyDown={handleKeyDown} type={type} {...rest} />
+          {type === 'password' && (
+            <span className={s.iconStart}>
+              <Visibility size={20} />
+            </span>
+          )}
           {isShowButton && (
             <button className={s.iconEnd} onClick={onClearClick} type={'button'}>
               {<Close color={'var(--color-border-input-active)'} size={20} />}
@@ -74,38 +77,38 @@ export const Input = (props: InputProps) => {
       </div>
     )
   }
-  if (type === 'password') {
-    return (
-      <div className={s.box}>
-        <span className={classNames.label}>
-          <Label label={label} />
-        </span>
-        <div className={s.input_wrapper}>
-          <input
-            className={classNames.input}
-            onKeyDown={handleKeyDown}
-            type={type}
-            {...rest}
-            disabled
-          />
-          <span className={s.iconEnd}>
-            <Visibility />
-          </span>
-        </div>
-        {showError && <Typography.Error>{errorMessage}</Typography.Error>}
-      </div>
-    )
-  }
+  // if (type === 'password') {
+  //   return (
+  //     <div className={s.box}>
+  //       <span className={classNames.label}>
+  //         <Label label={label} />
+  //       </span>
+  //       <div className={s.input_wrapper}>
+  //         <input
+  //           className={classNames.input}
+  //           onKeyDown={handleKeyDown}
+  //           type={type}
+  //           {...rest}
+  //           disabled
+  //         />
+  //         <span className={s.iconEnd}>
+  //           <Visibility />
+  //         </span>
+  //       </div>
+  //       {showError && <Typography.Error>{errorMessage}</Typography.Error>}
+  //     </div>
+  //   )
+  // }
 
-  return (
-    <div className={s.box}>
-      <span className={classNames.label}>
-        <Label label={label} />
-      </span>
-      <div className={s.input_wrapper}>
-        <input className={classNames.input} onKeyDown={handleKeyDown} type={type} {...rest} />
-      </div>
-      {showError && <Typography.Error>{errorMessage}</Typography.Error>}
-    </div>
-  )
+  // return (
+  //   <div className={s.box}>
+  //     <span className={classNames.label}>
+  //       <Label label={label} />
+  //     </span>
+  //     <div className={s.input_wrapper}>
+  //       <input className={classNames.input} onKeyDown={handleKeyDown} type={type} {...rest} />
+  //     </div>
+  //     {showError && <Typography.Error>{errorMessage}</Typography.Error>}
+  //   </div>
+  // )
 }

@@ -7,7 +7,7 @@ import s from './inputIt.module.scss'
 
 import { Search as SearchIcon } from '../../../images/icons/svgs/Search'
 import { Label } from '../label/Label'
-import { Typography } from '../tipography/Tipography'
+import { Typography } from '../tipography/_Typography'
 import { useGetId } from './useGetId'
 
 export type TextFieldProps = {
