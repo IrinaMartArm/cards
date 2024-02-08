@@ -19,21 +19,21 @@ export const DropdownMenuDemo = () => {
         <DropdownMenu.Content className={s.DropdownMenuContent} sideOffset={5}>
           <DropdownMenu.Item className={s.DropdownMenuItem}>
             <div className={s.itemBox}>
-              <Play size={20} />
+              <Play size={16} />
               Learn
             </div>
           </DropdownMenu.Item>
           <DropdownMenu.Separator className={s.DropdownMenuSeparator} />
           <DropdownMenu.Item className={s.DropdownMenuItem}>
             <div className={s.itemBox}>
-              <Pen size={20} />
+              <Pen size={16} />
               Edit
             </div>
           </DropdownMenu.Item>
           <DropdownMenu.Separator className={s.DropdownMenuSeparator} />
           <DropdownMenu.Item className={s.DropdownMenuItem}>
             <div className={s.itemBox}>
-              <TrashBin size={20} />
+              <TrashBin size={16} />
               Delete
             </div>
           </DropdownMenu.Item>

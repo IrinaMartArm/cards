@@ -46,20 +46,20 @@ button {
   display: flex;
   align-items: center;
 
-  height: 25px;
+  padding: 5px;
 
-  font-size: 13px;
-  line-height: 1;
+  font-size: 16px;
+  line-height: 1.2;
   color: var(--color-light-100);
 
   border-radius: 3px;
   outline: none;
 }
 
-.DropdownMenuItem[data-highlighted] {
-  color: var(--color-light-100);
-  background-color: var(--color-accent-300);
-}
+//.DropdownMenuItem[data-highlighted] {
+//  color: var(--color-light-100);
+//  background-color: var(--color-accent-300);
+//}
 
 .DropdownMenuSeparator {
   height: 1px;
@@ -103,13 +103,15 @@ button {
 
 .itemBox {
   display: flex;
-  gap: 3px;
+  gap: 5px;
   align-items: center;
   justify-content: center;
 }
 
 .photoBox {
   display: flex;
+  gap: 10px;
+  align-items: center;
   width: fit-content;
 }
 
@@ -128,6 +130,7 @@ button {
 .infoBox {
   display: flex;
   flex-direction: column;
+  gap: 3px;
   align-items: flex-start;
 }
 

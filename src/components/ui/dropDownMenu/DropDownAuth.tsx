@@ -11,8 +11,8 @@ export const DropDownAuth = () => {
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
         <button aria-label={'Customise options'} className={s.IconButton}>
-          <div>
-            <img alt={''} src={photo} />
+          <div className={s.photoWrapper}>
+            <img alt={'photo'} className={s.photo} src={photo} />
           </div>
         </button>
       </DropdownMenu.Trigger>
@@ -25,14 +25,14 @@ export const DropDownAuth = () => {
           <DropdownMenu.Separator className={s.DropdownMenuSeparator} />
           <DropdownMenu.Item className={s.DropdownMenuItem}>
             <div className={s.itemBox}>
-              <Person size={20} />
+              <Person size={16} />
               Edit
             </div>
           </DropdownMenu.Item>
           <DropdownMenu.Separator className={s.DropdownMenuSeparator} />
           <DropdownMenu.Item className={s.DropdownMenuItem}>
             <div className={s.itemBox}>
-              <Out size={20} />
+              <Out size={16} />
               Sign Out
             </div>
           </DropdownMenu.Item>
@@ -51,7 +51,7 @@ const Photo = () => {
       </div>
       <div className={s.infoBox}>
         <div className={s.name}>Irina</div>
-        <div className={s.mail}>nvhfhfh@ncb.com</div>
+        <div className={s.mail}>nvhffh@ncb.com</div>
       </div>
     </div>
   )
