@@ -4,10 +4,6 @@ html {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  input[type='»search»']::-webkit-search-cancel-button {
-    display: none;
-  }
 }
 
 *,
@@ -29,6 +25,11 @@ option {
   font-weight: inherit;
   font-style: inherit;
   color: inherit;
+  border-color: transparent;
+}
+
+input[type='search']::-webkit-search-cancel-button {
+  -webkit-appearance: none;
 }
 
 a,
