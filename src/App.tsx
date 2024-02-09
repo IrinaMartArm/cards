@@ -89,7 +89,7 @@ export function App() {
         currentPage={currentPage}
         onPageChange={PageChangeHandle}
         pageSize={10}
-        siblingCount={0}
+        siblingCount={1}
         totalCount={44}
       />
     </div>

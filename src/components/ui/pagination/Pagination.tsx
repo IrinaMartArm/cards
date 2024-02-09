@@ -19,14 +19,13 @@ type PaginationType = {
 export const Pagination = (props: PaginationType) => {
   const { currentPage, onPageChange, pageSize, siblingCount = 1, totalCount } = props
 
-  const { handlePageClicked, isFirstPage, isLastPage, onNext, onPrevious, paginationRange } =
-    usePagination({
-      currentPage,
-      onPageChange,
-      pageSize,
-      siblingCount,
-      totalCount,
-    })
+  const { isFirstPage, isLastPage, onNext, onPrevious, paginationRange } = usePagination({
+    currentPage,
+    onPageChange,
+    pageSize,
+    siblingCount,
+    totalCount,
+  })
 
   if (currentPage === 0 || paginationRange.length < 2) {
     return null
@@ -39,7 +38,8 @@ export const Pagination = (props: PaginationType) => {
 
         <PaginationButtons
           currentPage={currentPage}
-          onClick={handlePageClicked}
+          // onClick={handlePageClicked}
+          onClick={onPageChange}
           paginationRange={paginationRange}
         />
 

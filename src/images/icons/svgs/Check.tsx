@@ -9,9 +9,9 @@ export const Check = (Props: CheckIconProps) => {
       icon={
         <svg
           fill={'none'}
-          height={size}
+          height={'100%'}
           viewBox={'0 0 24 24'}
-          width={size}
+          width={'100%'}
           xmlns={'http://www.w3.org/2000/svg'}
         >
           <rect fill={arrowColor} height={'12'} width={'16'} x={'4'} y={'6'} />

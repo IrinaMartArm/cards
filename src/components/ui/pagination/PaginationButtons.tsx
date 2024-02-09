@@ -7,7 +7,7 @@ import s from './pagination.module.scss'
 type PaginationButtonsType = {
   currentPage: number
   disabled?: boolean
-  onClick: (pageNumber: number) => () => void
+  onClick: (pageNumber: number) => void
   paginationRange: (number | string)[]
 }
 
