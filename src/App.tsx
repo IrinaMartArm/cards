@@ -9,7 +9,6 @@ import RadioGroupDemo from '@/components/ui/radio-group/RadioGroup'
 import Select from '@/components/ui/select/Select'
 import Slider from '@/components/ui/slider/Slider'
 import { TabsDemo } from '@/components/ui/tabs/TabsDemo'
-import { _Typography } from '@/components/ui/tipography/_Typography'
 import { Typography } from '@/components/ui/tipography/Typography'
 
 import { Button } from './components/ui/button'
@@ -79,7 +78,6 @@ export function App() {
         <Typography variant={'h2'}>IT-incubator h2</Typography>
         <Typography variant={'h3'}>IT-incubator h3</Typography>
         <Typography variant={'link1'}>IT-incubator link1</Typography>
-        <Typography variant={'link2'}>IT-incubator link2</Typography>
         <Typography variant={'overline'}>IT-incubator overline</Typography>
         <Typography variant={'subtitle-link'}>IT-incubator subtitle-link</Typography>
         <Typography variant={'subtitle1'}>IT-incubator subtitle1</Typography>

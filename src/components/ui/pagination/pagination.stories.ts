@@ -12,5 +12,10 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
-  args: {},
+  args: {
+    currentPage: 1,
+    pageSize: 5,
+    siblingCount: 1,
+    totalCount: 10,
+  },
 }

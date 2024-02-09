@@ -3,12 +3,19 @@
   --font-family: 'Roboto', sans-serif;
 
   /* font-sizes */
-  --font-size-xs: calc((100vw - 360px) / (1440 - 360) * (14 - 12 + 8px));
-  --font-size-s: calc((100vw - 360px) / (1440 - 360) * (16 - 14 + 10px));
-  --font-size-m: calc((100vw - 360px) / (1440 - 360) * (18 - 16 + 12px));
-  --font-size-l: calc((100vw - 360px) / (1440 - 360) * (20 - 18 + 14px));
-  --font-size-xl: calc((100vw - 360px) / (1440 - 360) * (24 - 20 + 16px));
-  --font-size-xxl: calc((100vw - 360px) / (1440 - 360) * (30 - 24 + 18px));
+  //--font-size-xs: calc((100vw - 360px) / (1440 - 360) * (14 - 12 + 8px));
+  //--font-size-s: calc((100vw - 360px) / (1440 - 360) * (16 - 14 + 10px));
+  //--font-size-m: calc((100vw - 360px) / (1440 - 360) * (18 - 16 + 12px));
+  //--font-size-l: calc((100vw - 360px) / (1440 - 360) * (20 - 18 + 14px));
+  //--font-size-xl: calc((100vw - 360px) / (1440 - 360) * (24 - 20 + 16px));
+  //--font-size-xxl: calc((100vw - 360px) / (1440 - 360) * (30 - 24 + 18px));
+
+  --font-size-xs: 14px;
+  --font-size-s: 16px;
+  --font-size-m: 18px;
+  --font-size-l: 20px;
+  --font-size-xl: 24px;
+  --font-size-xxl: 28px;
 
   /* line-heights */
   --line-height-s: 16px;
@@ -115,4 +122,16 @@
   @include typography(var(--font-size-sx), var(--line-height-m), var(--font-weight-regular));
 
   color: var(--color-accent-500);
+}
+
+@function calcFluidFontSize($f-min, $f-max, $v-min, $v-max) {
+  $k: ($f-max - $f-min)/ ($v-max - $v-min);
+  $b: $f-min - $k * $v-min;
+
+  $b: $b * 1px;
+
+  @return calc(#{$k} * 100vw + #{$b});
+}
+.fluid-font-size {
+  font-size: calcFluidFontSize(16, 48, 480, 1280);
 }
