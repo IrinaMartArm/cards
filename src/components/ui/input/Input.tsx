@@ -1,7 +1,7 @@
 import { ComponentPropsWithoutRef, KeyboardEvent, ReactNode } from 'react'
 
 import { Label } from '@/components/ui/label/Label'
-import { Typography } from '@/components/ui/tipography/_Typography'
+import { Typography } from '@/components/ui/tipography/Typography'
 import { Close } from '@/images/icons/svgs/Close'
 import { Search } from '@/images/icons/svgs/Search'
 import { Visibility } from '@/images/icons/svgs/Visibility'
@@ -34,11 +34,16 @@ export const Input = (props: InputProps) => {
 
   const classNames = {
     clearButton: s.clearButton,
-    // iconStartColor: clsx(active ? ),
-    input: clsx(s.input, showError && s.error, disabled && s.disabled),
-    inputWithStart: clsx(s.inputWithStart, showError && s.error, disabled && s.disabled),
+    input: clsx(s.input, showError && s.error, disabled ? s.disabled : ''),
+    input_wrapper: clsx(
+      s.input_wrapper,
+      disabled && s.disabled,
+      showError && s.error,
+      `${s[type]}`
+    ),
+    inputWithStart: clsx(s.inputWithStart, showError && s.error, disabled ? s.disabled : ''),
     label: clsx(disabled ? s.labelDisable : s.label),
-    root: clsx(s.box, disabled && s.disabled, className),
+    root: clsx(s.box, disabled ? s.disabled : '', className),
   }
 
   // const isShowButton = true
@@ -55,13 +60,19 @@ export const Input = (props: InputProps) => {
         <span className={classNames.label}>
           <Label label={label} />
         </span>
-        <div className={s.input_wrapper}>
+        <div className={classNames.input_wrapper}>
           {type === 'search' && (
             <span className={s.iconStart}>
               <Search color={'var(--color-dark-100)'} size={20} />
             </span>
           )}
-          <input className={classNames.input} onKeyDown={handleKeyDown} type={type} {...rest} />
+          <input
+            className={classNames.input}
+            disabled={disabled}
+            onKeyDown={handleKeyDown}
+            type={type}
+            {...rest}
+          />
           {type === 'password' && (
             <span className={s.iconStart}>
               <Visibility size={20} />
@@ -69,11 +80,11 @@ export const Input = (props: InputProps) => {
           )}
           {isShowButton && (
             <button className={s.iconEnd} onClick={onClearClick} type={'button'}>
-              {<Close color={'var(--color-border-input-active)'} size={20} />}
+              {<Close color={'var(--color-light-100)'} size={20} />}
             </button>
           )}
         </div>
-        {showError && <Typography.Error>{errorMessage}</Typography.Error>}
+        {showError && <Typography variant={'error'}>{errorMessage}</Typography>}
       </div>
     )
   }
