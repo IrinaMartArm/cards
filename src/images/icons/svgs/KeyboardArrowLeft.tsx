@@ -1,7 +1,7 @@
 import { IconProps, IconWrapper } from '../IconWrapper'
 
 export const KeyboardArrowLeft = (allProps: IconProps) => {
-  const { svgProps: props, ...restProps } = allProps
+  const { color, svgProps: props, ...restProps } = allProps
 
   return (
     <IconWrapper
@@ -15,10 +15,7 @@ export const KeyboardArrowLeft = (allProps: IconProps) => {
           {...props}
         >
           <g clipPath={'url(#prefix__clip0_124_21508)'}>
-            <path
-              d={'M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z'}
-              fill={'currentColor'}
-            />
+            <path d={'M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z'} fill={color} />
           </g>
           <defs>
             <clipPath id={'prefix__clip0_124_21508'}>

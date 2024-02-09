@@ -6,7 +6,7 @@ button {
 .Container {
   display: flex;
   flex-direction: column;
-  width: 120px;
+  width: fit-content;
 }
 
 .SelectTrigger {
@@ -15,14 +15,14 @@ button {
   align-items: center;
   justify-content: center;
 
-  height: 35px;
-  padding: 0 15px;
+  height: 24px;
+  padding: 0 5px;
 
   font-size: 13px;
   line-height: 1;
   color: var(--color-light-100);
 
-  background-color: var(--color-dark-500);
+  background-color: var(--color-dark-700);
   border: 1px solid var(--color-dark-500);
   border-radius: 2px;
 }

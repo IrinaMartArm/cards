@@ -1,11 +1,16 @@
+import { useState } from 'react'
+
 import { Card } from '@/components/ui/card'
 import { CheckBox } from '@/components/ui/checkBox'
 import { DropdownMenuDemo } from '@/components/ui/dropDownMenu/DropDown'
 import { Input } from '@/components/ui/input'
+import { Pagination } from '@/components/ui/pagination/Pagination'
 import RadioGroupDemo from '@/components/ui/radio-group/RadioGroup'
 import Select from '@/components/ui/select/Select'
 import Slider from '@/components/ui/slider/Slider'
 import { TabsDemo } from '@/components/ui/tabs/TabsDemo'
+import { _Typography } from '@/components/ui/tipography/_Typography'
+import { Typography } from '@/components/ui/tipography/Typography'
 
 import { Button } from './components/ui/button'
 import out from './images/svg/log-out.svg'
@@ -20,6 +25,12 @@ export const tabsOptions = [
 ]
 
 export function App() {
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const PageChangeHandle = (page: number) => {
+    setCurrentPage(page)
+  }
+
   return (
     <div
       style={{ display: 'flex', flexDirection: 'column', gap: '15px', justifyContent: 'center' }}
@@ -54,9 +65,33 @@ export function App() {
       <RadioGroupDemo />
       <RadioGroupDemo disabled />
       <Slider />
-      <Select items={items} onChange={() => {}} placeholder={'100'} value={''} />
+      <Select items={items} onChange={() => {}} placeholder={'100'} />
       <TabsDemo tabsOptions={tabsOptions} />
       <DropdownMenuDemo />
+      <div>
+        <Typography variant={'body1'}>IT-incubator body1</Typography>
+        <Typography variant={'body2'}>IT-incubator body2</Typography>
+        <Typography variant={'caption'}>IT-incubator caption</Typography>
+        <Typography variant={'caption-bold'}>IT-incubator caption-bold</Typography>
+        <Typography variant={'caption-link'}>IT-incubator caption-link</Typography>
+        <Typography variant={'error'}>IT-incubator error</Typography>
+        <Typography variant={'h1'}>IT-incubator h1</Typography>
+        <Typography variant={'h2'}>IT-incubator h2</Typography>
+        <Typography variant={'h3'}>IT-incubator h3</Typography>
+        <Typography variant={'link1'}>IT-incubator link1</Typography>
+        <Typography variant={'link2'}>IT-incubator link2</Typography>
+        <Typography variant={'overline'}>IT-incubator overline</Typography>
+        <Typography variant={'subtitle-link'}>IT-incubator subtitle-link</Typography>
+        <Typography variant={'subtitle1'}>IT-incubator subtitle1</Typography>
+        <Typography variant={'subtitle2'}>IT-incubator subtitle2</Typography>
+      </div>
+      <Pagination
+        currentPage={currentPage}
+        onPageChange={PageChangeHandle}
+        pageSize={10}
+        siblingCount={0}
+        totalCount={44}
+      />
     </div>
   )
 }

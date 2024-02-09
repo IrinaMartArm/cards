@@ -57,7 +57,7 @@ const createTypographyComponent = <T extends ReactTag>(
   }
 }
 
-export const Typography = {
+export const _Typography = {
   Body1: createTypographyComponent('body1'),
   Body2: createTypographyComponent('body2'),
   Caption: createTypographyComponent('caption'),

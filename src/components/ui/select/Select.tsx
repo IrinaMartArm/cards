@@ -15,7 +15,6 @@ type SelectType = {
   label?: string
   onChange: any
   placeholder?: string
-  value: string
 }
 type SelectItemType = {
   children: string

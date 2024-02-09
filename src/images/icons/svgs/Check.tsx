@@ -1,8 +1,8 @@
 import { IconProps, IconWrapper } from '@/images/icons/IconWrapper'
 
 type CheckIconProps = IconProps & { arrowColor?: string }
-export const Check = (allProps: CheckIconProps) => {
-  const { arrowColor = 'black', color, size, svgProps: props, ...restProps } = allProps
+export const Check = (Props: CheckIconProps) => {
+  const { arrowColor = 'black', color, size, svgProps: props, ...restProps } = Props
 
   return (
     <IconWrapper
