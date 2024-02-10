@@ -8,6 +8,7 @@ import { Pagination } from '@/components/ui/pagination/Pagination'
 import RadioGroupDemo from '@/components/ui/radio-group/RadioGroup'
 import Select from '@/components/ui/select/Select'
 import Slider from '@/components/ui/slider/Slider'
+import { StarsBlock } from '@/components/ui/tables/StarsBlock'
 import { TabsDemo } from '@/components/ui/tabs/TabsDemo'
 import { Typography } from '@/components/ui/tipography/Typography'
 
@@ -32,9 +33,15 @@ export function App() {
 
   return (
     <div
-      style={{ display: 'flex', flexDirection: 'column', gap: '15px', justifyContent: 'center' }}
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '15px',
+        justifyContent: 'center',
+        padding: '100px',
+      }}
     >
-      {/*<div>*/}
+      <StarsBlock />
       <Button as={'a'} variant={'primary'}>
         <img alt={''} src={out} />
         hello

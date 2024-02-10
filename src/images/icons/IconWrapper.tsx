@@ -5,6 +5,7 @@ export type IconProps = {
   autoSize?: boolean
   /** Set icon fill color from design system */
   color?: string
+  colorB?: string
   /** Set width and height of icon in pixels */
   size?: number
   /** Props to pass directly to svg element */

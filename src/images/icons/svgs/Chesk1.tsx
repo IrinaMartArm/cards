@@ -1,32 +1,25 @@
 import { IconProps, IconWrapper } from '../IconWrapper'
 
 export const Close = (allProps: IconProps) => {
-  const { svgProps: props, ...restProps } = allProps
+  const { color, colorB, svgProps: props, ...restProps } = allProps
 
   return (
     <IconWrapper
       icon={
         <svg
           fill={'none'}
-          height={'100%'}
+          height={'24'}
           viewBox={'0 0 24 24'}
-          width={'100%'}
+          width={'24'}
           xmlns={'http://www.w3.org/2000/svg'}
-          {...props}
         >
-          <g clipPath={'url(#prefix__clip0_124_21523)'}>
-            <path
-              d={
-                'M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z'
-              }
-              fill={'currentColor'}
-            />
-          </g>
-          <defs>
-            <clipPath id={'prefix__clip0_124_21523'}>
-              <path d={'M0 0h24v24H0z'} fill={'#fff'} />
-            </clipPath>
-          </defs>
+          <rect fill={colorB} height={'12'} width={'16'} x={'4'} y={'6'} />
+          <path
+            d={
+              'M19 3H5C3.89 3 3 3.9 3 5V19C3 20.1 3.89 21 5 21H19C20.11 21 21 20.1 21 19V5C21 3.9 20.11 3 19 3ZM10 17L5 12L6.41 10.59L10 14.17L17.59 6.58L19 8L10 17Z'
+            }
+            fill={color}
+          />
         </svg>
       }
       {...restProps}
