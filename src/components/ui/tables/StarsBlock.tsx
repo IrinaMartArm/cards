@@ -1,6 +1,8 @@
 import { Star } from '@/images/icons/svgs/Star'
 import { StarBorder } from '@/images/icons/svgs/StarBorder'
 
+import s from './table.module.scss'
+
 const stars = [
   { checked: true },
   { checked: true },
@@ -11,7 +13,7 @@ const stars = [
 
 export const StarsBlock = () => {
   return (
-    <div>
+    <div className={s.stars}>
       {stars.map((s, index) => (
         <StarItem key={index} selected={s.checked} />
       ))}

@@ -8,7 +8,9 @@ import { Pagination } from '@/components/ui/pagination/Pagination'
 import RadioGroupDemo from '@/components/ui/radio-group/RadioGroup'
 import Select from '@/components/ui/select/Select'
 import Slider from '@/components/ui/slider/Slider'
+import { IconsBlock } from '@/components/ui/tables/IconsBlock'
 import { StarsBlock } from '@/components/ui/tables/StarsBlock'
+import { Table } from '@/components/ui/tables/Table'
 import { TabsDemo } from '@/components/ui/tabs/TabsDemo'
 import { Typography } from '@/components/ui/tipography/Typography'
 
@@ -97,6 +99,28 @@ export function App() {
         siblingCount={1}
         totalCount={44}
       />
+      <Table.Body>
+        <Table.Head>
+          <Table.HeadCell>Name</Table.HeadCell>
+          <Table.HeadCell>Name</Table.HeadCell>
+          <Table.HeadCell>Name</Table.HeadCell>
+          <Table.HeadCell>Name</Table.HeadCell>
+          <Table.HeadCell>Name</Table.HeadCell>
+        </Table.Head>
+        <Table.Body>
+          <Table.Cell>
+            <StarsBlock />
+          </Table.Cell>
+          <Table.Cell>
+            <IconsBlock />
+          </Table.Cell>
+          <Table.Cell />
+          <Table.Cell>
+            <Typography variant={'overline'}>Hi</Typography>
+          </Table.Cell>
+          <Table.Cell>:(</Table.Cell>
+        </Table.Body>
+      </Table.Body>
     </div>
   )
 }

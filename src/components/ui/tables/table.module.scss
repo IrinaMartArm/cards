@@ -17,11 +17,19 @@
 }
 
 .tableCell {
-  padding: 6px 24px;
+  padding: 8px 24px;
 
   font-size: var(--font-size-s);
   line-height: var(--line-height-m);
 
   background-color: var(--color-dark-900);
   border-bottom: 1px solid var(--color-dark-500);
+}
+
+.stars {
+  display: flex;
+}
+
+.icons {
+  display: flex;
 }
