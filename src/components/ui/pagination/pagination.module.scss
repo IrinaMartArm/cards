@@ -30,8 +30,10 @@
   align-items: center;
 }
 
-@mixin item {
+.item {
   all: unset;
+
+  cursor: pointer;
 
   display: flex;
   align-items: center;
@@ -44,12 +46,6 @@
   color: var(--color-light-100);
 
   border-radius: 2px;
-}
-
-.item {
-  @include item;
-
-  cursor: pointer;
 
   &.dots:hover {
     cursor: default;
@@ -61,13 +57,13 @@
     background-color: var(--color-dark-500);
   }
 
+  &:focus-within {
+    border: 1px soid var(--color-info-900);
+  }
+
   &.selected {
     color: var(--color-dark-900);
     background-color: var(--color-light-100);
-  }
-
-  &:focus-visible {
-    outline: var(--color-info-900);
   }
 
   &.disabled {
@@ -82,7 +78,19 @@
 }
 
 .dots {
-  @include item;
+  all: unset;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 24px;
+  height: 24px;
+
+  line-height: 1.43;
+  color: var(--color-light-100);
+
+  border-radius: 2px;
 }
 
 .icon {
