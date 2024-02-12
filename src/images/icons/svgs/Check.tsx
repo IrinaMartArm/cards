@@ -1,5 +1,7 @@
+import { Ref, forwardRef } from 'react'
+
 import { IconProps, IconWrapper } from '@/images/icons/IconWrapper'
-export const Check = (Props: IconProps) => {
+export const CheckWR = (Props: IconProps, ref: Ref<any>) => {
   const { color, colorB = 'black', size, svgProps: props, ...restProps } = Props
 
   return (
@@ -7,9 +9,10 @@ export const Check = (Props: IconProps) => {
       icon={
         <svg
           fill={'none'}
-          height={'100%'}
+          height={size}
+          ref={ref}
           viewBox={'0 0 24 24'}
-          width={'100%'}
+          width={size}
           xmlns={'http://www.w3.org/2000/svg'}
         >
           <rect fill={colorB} height={'12'} width={'16'} x={'4'} y={'6'} />
@@ -25,3 +28,5 @@ export const Check = (Props: IconProps) => {
     />
   )
 }
+
+export const Check = forwardRef(CheckWR)

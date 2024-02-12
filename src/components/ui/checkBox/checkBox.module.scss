@@ -1,3 +1,7 @@
+button {
+  all: unset;
+}
+
 .container {
   display: flex;
   align-items: center;
@@ -7,6 +11,7 @@
   cursor: pointer;
 
   display: flex;
+  gap: 5px;
   align-items: center;
 
   font-size: var(--font-size-s);
@@ -38,9 +43,9 @@
   border: 2px solid var(--color-light-900);
   border-radius: 2px;
 
-  &:focus {
-    background-color: transparent;
-  }
+  //&:focus-within {
+  //  background-color: transparent;
+  //}
 
   &:disabled {
     cursor: initial;
@@ -68,7 +73,10 @@
   &:not(.disabled) .root:has([data-state='checked']) {
   }
 
-  &:focus-within,
+  &:focus-within {
+    background-color: var(--color-dark-100);
+  }
+
   &:hover:not(.disabled),
   &:hover:not(.disabled) .root:not([data-state='checked']) {
     background-color: var(--color-dark-500);
