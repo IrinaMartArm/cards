@@ -1,3 +1,4 @@
+import { AuthPhoto } from '@/components/ui/authPhoto/AuthPhoto'
 import { Out } from '@/images/icons/svgs/Out'
 import { Person } from '@/images/icons/svgs/Person'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
@@ -11,9 +12,7 @@ export const DropDownAuth = () => {
     <DropdownMenu.Root>
       <DropdownMenu.Trigger asChild>
         <button aria-label={'Customise options'} className={s.IconButton}>
-          <div className={s.photoWrapper}>
-            <img alt={'photo'} className={s.photo} src={photo} />
-          </div>
+          <AuthPhoto photo={photo} />
         </button>
       </DropdownMenu.Trigger>
 
@@ -46,9 +45,10 @@ export const DropDownAuth = () => {
 const Photo = () => {
   return (
     <div className={s.photoBox}>
-      <div className={s.photoWrapper}>
-        <img alt={''} className={s.photo} src={photo} />
-      </div>
+      {/*<div className={s.photoWrapper}>*/}
+      {/*  <img alt={''} className={s.photo} src={photo} />*/}
+      {/*</div>*/}
+      <AuthPhoto photo={photo} />
       <div className={s.infoBox}>
         <div className={s.name}>Irina</div>
         <div className={s.mail}>nvhffh@ncb.com</div>
