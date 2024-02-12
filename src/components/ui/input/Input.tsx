@@ -11,6 +11,7 @@ import s from './input.module.scss'
 
 export type InputProps = {
   errorMessage?: string
+  fullWidth?: boolean
   isShowButton?: boolean
   label?: ReactNode
   onClearClick?: () => void
@@ -22,6 +23,7 @@ export const Input = (props: InputProps) => {
     className,
     disabled,
     errorMessage,
+    fullWidth,
     isShowButton = false,
     label,
     onClearClick,
@@ -39,7 +41,8 @@ export const Input = (props: InputProps) => {
       s.input_wrapper,
       disabled && s.disabled,
       showError && s.error,
-      `${s[type]}`
+      `${s[type]}`,
+      fullWidth && s.fullWidth
     ),
     inputWithStart: clsx(s.inputWithStart, showError && s.error, disabled ? s.disabled : ''),
     label: clsx(disabled ? s.labelDisable : s.label),

@@ -24,11 +24,16 @@ type SelectItemType = {
   onChange: any
   value: string
 }
-const SelectDemo = ({ items, label, placeholder }: SelectType) => {
+const SelectDemo = ({ className, items, label, placeholder }: SelectType) => {
+  const classNames = {
+    Container: clsx(s.Container, className),
+    SelectTrigger: clsx(s.SelectTrigger, className),
+  }
+
   return (
     <Select.Root>
-      <div className={s.Container}>
-        <Select.Trigger aria-label={label} className={s.SelectTrigger}>
+      <div className={classNames.Container}>
+        <Select.Trigger aria-label={label} className={classNames.SelectTrigger}>
           <Select.Value placeholder={placeholder} />
           <Select.Icon className={s.SelectIcon}>
             <ChevronDownIcon />
