@@ -1,5 +1,7 @@
 import { ComponentProps, ElementType, ReactNode } from 'react'
 
+import { clsx } from 'clsx'
+
 import s from './typography.module.scss'
 
 type PropsType<T extends ElementType> = {
@@ -15,8 +17,12 @@ export const Typography = <T extends ElementType = 'div'>({
   variant,
   ...rest
 }: PropsType<T> & Omit<ComponentProps<T>, keyof PropsType<T>>) => {
+  const classNames = {
+    style: clsx(className, `${s[variant]}`),
+  }
+
   return (
-    <Component className={`${s[variant]}`} {...rest}>
+    <Component className={classNames.style} {...rest}>
       {children}
     </Component>
   )

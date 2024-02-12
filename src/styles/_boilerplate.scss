@@ -9,9 +9,9 @@ html {
 *,
 *::before,
 *::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 input,
@@ -25,19 +25,20 @@ option {
   font-weight: inherit;
   font-style: inherit;
   color: inherit;
+
   border-color: transparent;
 }
 
 input[type='search']::-webkit-search-cancel-button {
-  -webkit-appearance: none;
+  appearance: none;
 }
 
 a,
 a:link,
 a:visited {
-  text-decoration: none;
   cursor: pointer;
   color: var(--color-light-100);
+  text-decoration: none;
 
   &:hover {
     text-decoration: none;
@@ -51,11 +52,13 @@ ul li {
 
 button,
 input[type='submit'] {
+  cursor: pointer;
+
   display: inline-block;
-  box-shadow: none;
+
   background-color: transparent;
   border: none;
-  cursor: pointer;
+  box-shadow: none;
 }
 
 input:focus,

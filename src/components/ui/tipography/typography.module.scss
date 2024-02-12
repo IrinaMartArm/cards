@@ -65,7 +65,7 @@
   @include typography(inherit, inherit, inherit);
 
   cursor: pointer;
-  color: var(--color-text-link);
+  color: var(--color-info-300);
   text-decoration: underline;
 
   &:hover,
@@ -78,7 +78,7 @@
   @include typography(var(--font-size-s), var(--line-height-m), var(--font-weight-bold));
 
   cursor: pointer;
-  color: var(--color-text-link);
+  color: var(--color-info-300);
   text-decoration: underline;
 
   &:hover,
@@ -93,14 +93,6 @@
   color: var(--color-danger-300);
 }
 
-@function calcFluidFontSize($f-min, $f-max, $v-min, $v-max) {
-  $k: ($f-max - $f-min)/ ($v-max - $v-min);
-  $b: $f-min - $k * $v-min;
-
-  $b: $b * 1px;
-
-  @return calc(#{$k} * 100vw + #{$b});
-}
-.fluid-font-size {
-  font-size: calcFluidFontSize(16, 48, 480, 1280);
+.dashed {
+  border-bottom: 1px dashed var(--color-light-100);
 }

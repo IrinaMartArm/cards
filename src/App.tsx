@@ -3,7 +3,9 @@ import { useState } from 'react'
 import { Card } from '@/components/ui/card'
 import { CheckBox } from '@/components/ui/checkBox'
 import { DropdownMenuDemo } from '@/components/ui/dropDownMenu/DropDown'
+import { Header } from '@/components/ui/header/Header'
 import { Input } from '@/components/ui/input'
+import { Modals } from '@/components/ui/modals/Modals'
 import { Pagination } from '@/components/ui/pagination/Pagination'
 import RadioGroupDemo from '@/components/ui/radio-group/RadioGroup'
 import Select from '@/components/ui/select/Select'
@@ -38,7 +40,7 @@ export function App() {
       style={{
         display: 'flex',
         flexDirection: 'column',
-        gap: '15px',
+        gap: '35px',
         justifyContent: 'center',
         padding: '100px',
       }}
@@ -66,10 +68,10 @@ export function App() {
         type={'search'}
       />
       <Card />
-      <CheckBox checked onChange={() => {}} />
-      <CheckBox checked disabled onChange={() => {}} />
-      <CheckBox checked={false} label={'Check-box'} onChange={() => {}} />
-      <CheckBox checked={false} disabled label={'Check-box'} onChange={() => {}} />
+      <CheckBox onChange={() => {}} />
+      <CheckBox disabled onChange={() => {}} />
+      <CheckBox label={'Check-box'} onChange={() => {}} />
+      <CheckBox disabled label={'Check-box'} onChange={() => {}} />
       <RadioGroupDemo />
       <RadioGroupDemo disabled />
       <Slider />
@@ -99,28 +101,36 @@ export function App() {
         siblingCount={1}
         totalCount={44}
       />
-      <Table.Body>
+      <Table.Root>
         <Table.Head>
-          <Table.HeadCell>Name</Table.HeadCell>
-          <Table.HeadCell>Name</Table.HeadCell>
-          <Table.HeadCell>Name</Table.HeadCell>
-          <Table.HeadCell>Name</Table.HeadCell>
-          <Table.HeadCell>Name</Table.HeadCell>
+          <Table.Row>
+            <Table.HeadCell>Name</Table.HeadCell>
+            <Table.HeadCell>Name</Table.HeadCell>
+            <Table.HeadCell>Name</Table.HeadCell>
+            <Table.HeadCell>Name</Table.HeadCell>
+            <Table.HeadCell>Name</Table.HeadCell>
+          </Table.Row>
         </Table.Head>
         <Table.Body>
-          <Table.Cell>
-            <StarsBlock />
-          </Table.Cell>
-          <Table.Cell>
-            <IconsBlock />
-          </Table.Cell>
-          <Table.Cell />
-          <Table.Cell>
-            <Typography variant={'overline'}>Hi</Typography>
-          </Table.Cell>
-          <Table.Cell>:(</Table.Cell>
+          <Table.Row>
+            <Table.Cell>
+              <StarsBlock />
+            </Table.Cell>
+            <Table.Cell>
+              <IconsBlock />
+            </Table.Cell>
+            <Table.Cell />
+            <Table.Cell>
+              <Typography variant={'overline'}>Hi</Typography>
+            </Table.Cell>
+            <Table.Cell>:(</Table.Cell>
+          </Table.Row>
         </Table.Body>
-      </Table.Body>
+      </Table.Root>
+      <Modals />
+      <Modals buttons />
+      <Header name={'Irina'} />
+      <Header withBtn />
     </div>
   )
 }
